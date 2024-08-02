@@ -1,0 +1,9 @@
+build-essential
+wget
+poppler-utils
+libreoffice
+python3-pil
+tesseract-ocr
+libtesseract-dev
+tesseract-ocr-eng
+tesseract-ocr-script-latn

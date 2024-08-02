@@ -1,0 +1,1 @@
+default_app_config = 'app.term_match.apps.TermMatchConfig'

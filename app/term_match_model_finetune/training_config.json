@@ -1,0 +1,12 @@
+{
+    "model_name": "SENT_BERT_MODEL_PATH",
+    "model_shortname": "gte-base",
+    "dataset_name": "boc",
+    "train_file": "data/sentence_pairs/sentence_pairs_2024-06-04_2024-06-05.csv",
+    "num_train_epochs": 20,
+    "learning_rate": 1e-05,
+    "batch_size": 32,
+    "ckpt_id": 0,
+    "max_seq_length": 512,
+    "model_save_path": "models/term_match_finetune_model"
+}

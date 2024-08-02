@@ -1,0 +1,50 @@
+from django.db import models
+from django.db.models import AutoField, IntegerField, DecimalField, CharField
+from django.core.validators import MinValueValidator, MaxValueValidator
+        
+PERCENTAGE_VALIDATOR = [MinValueValidator(0), MaxValueValidator(100)]
+
+# Create your models here.
+class Analytics(models.Model):
+    id = AutoField(auto_created=True, primary_key=True)
+    task_id = IntegerField(blank=False, null=False, help_text='task ID')
+    term_count = IntegerField(default=0, blank=False, null=False)
+    term_content_count = IntegerField(default=0, blank=False, null=False)
+    irrelavent_content_count = IntegerField(default=0, blank=False, null=False)
+    hit_count = IntegerField(default=0, blank=False, null=False)
+    miss_count = IntegerField(default=0, blank=False, null=False)
+    top_miss_ts_term = CharField(max_length=512, blank=True, null=True, db_index=True)
+    hit_instance_count = IntegerField(default=0, blank=False, null=False)
+    avg_hit_per_hit_instance = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True)
+    manual_count = IntegerField(default=0, blank=False, null=False)
+    manual_instance_count = IntegerField(default=0, blank=False, null=False)
+    manual_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    definition_clause_hit_count = IntegerField(default=0, blank=False, null=False)
+    parties_clause_hit_count = IntegerField(default=0, blank=False, null=False)
+    clause_hit_count = IntegerField(default=0, blank=False, null=False)
+    schedule_hit_count = IntegerField(default=0, blank=False, null=False)
+    definition_clause_miss_count = IntegerField(default=0, blank=False, null=False)
+    parties_clause_miss_count = IntegerField(default=0, blank=False, null=False)
+    clause_miss_count = IntegerField(default=0, blank=False, null=False)
+    schedule_miss_count = IntegerField(default=0, blank=False, null=False)
+    avg_accuracy = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    top1_hit_count = IntegerField(default=0, blank=False, null=False)
+    top1_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    up_to_top1_hit_count = IntegerField(default=0, blank=False, null=False)
+    up_to_top1_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    top2_hit_count = IntegerField(default=0, blank=False, null=False)
+    top2_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    up_to_top2_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    top3_hit_count = IntegerField(default=0, blank=False, null=False)
+    top3_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    up_to_top3_hit_count = IntegerField(default=0, blank=False, null=False)
+    up_to_top3_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    top4_hit_count = IntegerField(default=0, blank=False, null=False)
+    top4_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    up_to_top4_hit_count = IntegerField(default=0, blank=False, null=False)
+    up_to_top4_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    top5_hit_count = IntegerField(default=0, blank=False, null=False)
+    top5_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    up_to_top5_hit_count = IntegerField(default=0, blank=False, null=False)
+    up_to_top5_hit_rate = DecimalField(max_digits=5, decimal_places=2, default=0, blank=True, null=True, validators=PERCENTAGE_VALIDATOR)
+    

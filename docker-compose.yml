@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: ldrs_analytics
+    image: ldrs_analytics:latest
+    volumes:
+      - ${PWD}/config.py:/ldrs_analytics/config.py
+      - ${PWD}/regexp.py:/ldrs_analytics/regexp.py
+      - ${PWD}/TS_section.csv:/ldrs_analytics/TS_section.csv
+      - ${PWD}/data:/ldrs_analytics/data
+      - ${PWD}/models:/ldrs_analytics/models
+      # - /home/data/frontend_data/upload/:/ldrs_analytics/data/frontend_data/upload
+    ports:
+    - "0.0.0.0:8000:8000"
+
