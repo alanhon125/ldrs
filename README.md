@@ -1,6 +1,6 @@
 # LDRS
 
-BOCHK Loan Document Review System
+Bank Loan Document Review System
 
 ## Getting started
 
