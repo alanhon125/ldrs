@@ -26,7 +26,7 @@ If not, please install Anaconda Distribution from [here](https://www.anaconda.co
 ```bash
 conda create -n boc python=3.10.11
 conda activate boc
-git clone --branch dev http://10.6.55.124/bigdata/ldrs.git
+git clone https://github.com/alanhon125/ldrs.git
 cd ~/ldrs/analytics/
 pip install -r requirements.txt
 sudo xargs -a packages.txt apt-get install -y
